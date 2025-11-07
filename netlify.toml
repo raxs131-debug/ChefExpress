@@ -1,26 +1,26 @@
 [build]
 
-Comando para construir la aplicación React
+Comando de construcción para React
 
 command = "npm run build"
 
-Directorio donde se guarda la aplicación construida
+Directorio donde se publican los archivos estáticos (el resultado de 'npm run build')
 
 publish = "build"
 
 [functions]
 
-Directorio donde se encuentran todas las funciones lambda
+Directorio donde se encuentran todas las funciones serverless (Netlify Functions)
 
 directory = "netlify/functions"
 
-Puedes especificar el tiempo de espera (timeout) si es necesario (en segundos)
+Tiempo de espera de 10 segundos para la función
 
 timeout = 10
 
 [[redirects]]
 
-Esto asegura que React Router (o cualquier ruta interna) funcione correctamente
+Regla de redirección para que todas las rutas internas sean manejadas por React (history API)
 
 from = "/*"
 to = "/index.html"
