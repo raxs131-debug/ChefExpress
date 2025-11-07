@@ -4,7 +4,6 @@ publish = "build"
 
 [functions]
 directory = "netlify/functions"
-timeout = 10
 
 [[redirects]]
 from = "/*"
