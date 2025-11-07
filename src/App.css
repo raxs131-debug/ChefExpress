@@ -1,0 +1,346 @@
+/* Estilos Globales y Fondo Oscuro */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Fondo más cálido, gris carbón suave */
+  background-color: #1e1e1e; 
+  color: #f0f0f0; /* Texto claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 600px;
+  width: 95%;
+  padding: 30px 20px;
+  /* Fondo del contenedor ligeramente más claro para contraste */
+  background-color: #2c2c2c; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+h1 {
+  text-align: center;
+  color: #e0e0e0;
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+h1 > span {
+  color: #7f8c8d; /* Color gris para el plato */
+}
+
+h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #444; /* Borde más visible */
+    padding-bottom: 10px;
+    margin-top: 25px;
+}
+
+p i {
+  color: #bbb;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --- ESTILOS DE LISTAS Y RESULTADOS --- */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo base para todos los items de lista */
+li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #444; /* Borde más visible */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* --- ESTILOS DE BOTONES GENÉRICOS --- */
+button {
+  background-color: #34495e; /* Azul grisáceo - base */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+button:hover:not(:disabled) {
+  background-color: #4a637c;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* --- ESTILOS DE FORMULARIO (InputIngrediente) --- */
+.input-card {
+    background-color: #383838; /* Contenedor de input ligeramente más claro */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-field {
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #444; /* Fondo del campo de input más claro */
+    color: #f0f0f0;
+    font-size: 1em;
+}
+
+.input-field::placeholder {
+    color: #bbb;
+}
+
+/* CAMBIO DE COLOR: Verde Lima Vibrante para Agregar */
+.primary-button {
+    background-color: #8BC34A; 
+    margin-top: 10px;
+    margin-right: 0; /* Asegura que el botón ocupe todo el ancho si está solo */
+}
+
+.primary-button:hover:not(:disabled) {
+    background-color: #7CB342;
+}
+
+/* CAMBIO DE COLOR: Coral Intenso para el botón de búsqueda */
+.search-button-container button {
+    background-color: #FF7F50; /* Coral */
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+}
+.search-button-container button:hover:not(:disabled) {
+    background-color: #FF6347; /* Tomato */
+}
+
+
+/* --- BOTÓN ELIMINAR (🗑️) --- */
+.delete-button {
+    background: none;
+    border: none;
+    color: #e74c3c; /* Rojo de Advertencia (Mantenemos el estándar) */
+    padding: 5px 10px;
+    font-size: 1.2em; 
+    transition: color 0.2s;
+    margin-right: 0; 
+}
+
+.delete-button:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* --- BOTÓN LIMPIAR TODO (🧹) --- */
+.ingredient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Ajusta el margen superior para que no interfiera con el padding de h2 */
+    margin-top: 10px; 
+}
+.ingredient-header h2 {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.clear-all-button {
+    background-color: #95a5a6; /* Gris claro/metálico */
+    color: #2c3e50; /* Texto oscuro */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin-right: 0;
+    /* Estilo adicional para que el texto del h2 y el botón estén alineados verticalmente */
+    height: fit-content;
+}
+.clear-all-button:hover {
+    background-color: #bdc3c7;
+}
+
+/* --- ESTILOS DE RESULTADOS --- */
+.results-section {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #444; /* Borde más visible */
+}
+
+/* CAMBIO DE COLOR: Amarillo Dorado para títulos */
+.recipe-title {
+    font-weight: bold;
+    color: #FFC300; 
+}
+
+.recipe-missing {
+    font-style: italic;
+    color: #e74c3c; /* Rojo para lo que falta */
+    font-size: 0.9em;
+}
+
+/* Título de receta que indica que se puede hacer clic */
+.clickable-title {
+    cursor: pointer;
+    text-decoration: underline dotted #FFC300; /* Subrayado punteado con el nuevo color */
+}
+
+.recipe-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-item:hover {
+    background-color: #383838; /* Fondo de hover más claro */
+}
+
+.view-details {
+    /* CAMBIO DE COLOR: Usamos el mismo naranja Coral para la llamada a la acción */
+    color: #FF7F50; 
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 15px; 
+    white-space: nowrap; 
+}
+
+
+/* --- ESTILOS PARA EL MODAL DE DETALLE DE RECETA --- */
+
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: #2c2c2c; /* Coincide con el fondo principal de la app */
+    color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 95%;
+    width: 600px; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    margin: 20px 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #444;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #2c2c2c; /* Coincide con el fondo */
+    z-index: 10;
+}
+
+/* Títulos del Modal */
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #FFC300; /* Amarillo Dorado */
+    border-bottom: none;
+}
+
+/* Subtítulos del Cuerpo del Modal */
+.modal-body h4 {
+    color: #FF7F50; /* Coral para Ingredientes/Instrucciones */
+    margin-top: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+}
+
+.recipe-meta {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.close-button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    line-height: 1;
+    margin: 0;
+}
+
+.close-button:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Listas de detalle */
+.ingredient-detail-list, .instructions-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.instructions-list {
+    list-style-type: decimal;
+    margin-top: 10px;
+}
+
+.ingredient-detail-list li, .instructions-list li {
+    padding: 8px 0;
+    border-bottom: none;
+    display: list-item;
+    line-height: 1.4;
+}
+
+.recipe-tags {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #888;
+}
