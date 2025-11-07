@@ -1,27 +1,19 @@
 [build]
-
-Comando de construcción para React
-
+# Comando de construcción para React
 command = "npm run build"
 
-Directorio donde se publican los archivos estáticos (el resultado de 'npm run build')
-
+# Directorio donde se publican los archivos estáticos
 publish = "build"
 
 [functions]
-
-Directorio donde se encuentran todas las funciones serverless (Netlify Functions)
-
+# Directorio donde se encuentran todas las funciones serverless (Netlify Functions)
 directory = "netlify/functions"
-
-Tiempo de espera de 10 segundos para la función
-
+# Tiempo de espera de 10 segundos para la función (opcional ya que es el default)
 timeout = 10
 
 [[redirects]]
-
-Regla de redirección para que todas las rutas internas sean manejadas por React (history API)
-
+# Regla de redirección esencial para React (History API)
+# Dirige todas las rutas ("/*") a /index.html con código 200 (OK)
 from = "/*"
 to = "/index.html"
 status = 200
